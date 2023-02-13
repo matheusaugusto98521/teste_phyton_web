@@ -1,0 +1,65 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+#criar primeira página
+#toda página em phyton tem um (route e função)
+#route -> carmobebidas.com/
+#função -> o que você quer exibir naquela página
+#template
+
+
+@app.route('/')
+def homepage():
+    return render_template('homepage.html')
+
+@app.route('/catalogo')
+def catalog():
+    return render_template('catalog.html')
+
+@app.route('/quemsomos')
+def whoweare ():
+    return render_template('whoweare.html')
+
+
+@app.route('/noticias')
+def news ():
+    return render_template('news.html')
+
+@app.route('/contatos')
+def contacts ():
+    return render_template('contacts.html')
+
+@app.route('/usuarios/<nome_usuario>')
+def usuarios(nome_usuario):
+    return render_template('usuarios.html', nome_usuario=nome_usuario)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#colocar página no ar
+if __name__ == '__main__':
+    app.run(debug=True)
+
+    #servidor do heroku
+
+
